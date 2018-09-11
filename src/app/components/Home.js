@@ -15,7 +15,6 @@ export class Home extends React.Component {
         this.setState({
             age: this.state.age + 3
         })
-        console.log(this.age);
     }
 
     render() {
