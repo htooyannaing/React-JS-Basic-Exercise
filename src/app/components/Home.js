@@ -5,11 +5,16 @@ export class Home extends React.Component {
 
     constructor(props) {
         super(props);
-        this.age = props.age;
+        this.state = {
+            age: props.age,
+            status: 0
+        }
     }
 
     onMakeOrder() {
-        this.age += 3;
+        this.setState({
+            age: this.state.age + 3
+        })
         console.log(this.age);
     }
 
@@ -17,7 +22,8 @@ export class Home extends React.Component {
         return(
             <div>
                 <p>Component</p>
-                <p>Your name is {this.props.name}, your age is {this.props.age}</p>
+                <p>Your name is {this.props.name}, your age is {this.state.age}</p>
+                <p>{this.state.status}</p>
                 <hr />
                 <button onClick={() => this.onMakeOrder()} className="btn btn-primary">Make me order</button>
             </div>
